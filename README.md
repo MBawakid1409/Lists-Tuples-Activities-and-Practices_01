@@ -1,6 +1,6 @@
-# #365DaysOfCode | Jan-20-2022
+# #365DaysOfCode | Jan-22-2022
 
-## CS101: Introduction to Programming | CodeAcademy _ Week 03 / 52
+## CS101: Introduction to Programming | CodeAcademy _ Day 22 _ Week 04 / 52
 
-### Python "Control Flow + Errors in Python"
+### Python "Lists + Tuples + Activities and Practices _ 01"
 

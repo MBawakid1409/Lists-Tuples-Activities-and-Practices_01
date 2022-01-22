@@ -1,106 +1,135 @@
 # Activities & Practices
 
-# 1st Activity "Magic 8-Ball"
-# Write a magic8.py Python program that can answer any “Yes” or “No” question with a different fortune each time it executes.
-# We’ll be using the following 9 possible answers for our Magic 8-Ball:
-# [Yes - definitely] | [It is decidedly so] | [Without a doubt] | [Reply hazy, try again] | [Ask again later] | [Better not tell you now] | [My sources say no] | [Outlook not so good] | [Very doubtful]
-# The output of the program will have the following format:
-# [Name] asks: [Question] | Magic 8-Ball’s answer: [Answer]
-import random
+# 1st Activity "Gradebook"
+# You are a student and you're trying to organize your subjects and grades using Python. Let's explore what we've learned about lists to organize your subjects and scores.                     
 
-#name = "Gomba"
-name = ""
-question = "Are you awake??"
-#question = ""
-answer = ""
+last_semester_gradebook = [["politics", 80], ["latin", 96], ["dance", 97], ["architecture", 65]]
 
-random_number = random.randint(1, 9)
-#print(random_number)
+subjects = ["physics", "calculus", "poetry", "history"]
+grades = [98, 97, 85, 88]
 
-if random_number == 1:
-    answer = "Yes - definitely"
-elif random_number == 2:
-    answer = "It is decidedly so"
-elif random_number == 3:
-    answer = "Better not tell you now"
-elif random_number == 4:
-    answer = "My sources say no"
-elif random_number == 5:
-    answer = "Ask again later."
-elif random_number == 6:
-    answer = "Better not tell you now."
-elif random_number == 7:
-    answer = "My sources say no."
-elif random_number == 8:
-    answer = "Outlook not so good."
-elif random_number == 9:
-    answer = "Very doubtful."
-else:
-    answer = "Error"  
+gradebook = [["physics", 98], ["calculus", 97], ["poetry", 85], ["history", 88]]
+print(gradebook)
 
+gradebook.append(["computer science", 100])
+print(gradebook)
 
-if question == "":
-    print("The Magic 8-Ball cannot provide a fortune unless you ask it something.")
-elif name == "":
-    print("Question: " + question)
-    print("Magic 8-Ball's answer: " + answer)
-else:
-    print(name + " asks: " + question)
-    print("Magic 8-Ball's answer: " + answer)        
+gradebook.append(["visual arts", 93])
+print(gradebook)
 
-#print(name + " asks: " + question)
-#print("Magic 8-Ball's answer: " + answer)  
+gradebook[-1][-1] += 5
+print(gradebook)
 
-# if name == "":
-#     print("Question: " + question)
-# else:
-#     print(name + " asks: " + question)                         
+gradebook[2].remove("poetry")
+print(gradebook)
 
+gradebook[2].append("Pass")
 
-
+full_gradebook = last_semester_gradebook + gradebook
+print(full_gradebook)
 
 print("-----------------------------------------------------")
+print("-----------------------------------------------------")
 
+# 2nd Activity "Len's Slice"
+# You work at Len’s Slice, a new pizza joint in the neighborhood. You are going to use your knowledge of Python lists to organize some of your sales data.
 
+toppings = ["pepperoni", "pineapple", "cheese", "sausage", "olives", "anchovies", "mushrooms"]
+prices = [2, 6, 1, 3, 2, 7, 2]
 
+num_two_dollar_slices = prices.count(2)
+print(num_two_dollar_slices)
 
-# 2nd Activity "Sal's Shipping"
+num_pizzas = len(toppings)
+print(num_pizzas)
 
-# In this activit, you’ll build a program that will take the weight of a package and determine the cheapest way to ship that package using Sal’s Shippers.
-# Sal’s Shippers has several different options for a customer to ship their package:
-# Ground Shipping, which is a small flat charge plus a rate based on the weight of your package.
-# Ground Shipping Premium, which is a much higher flat charge, but you aren’t charged for weight.
-# Drone Shipping (new), which has no flat charge, but the rate based on weight is triple the rate of ground shipping.
+print("We sell {} different kinds of pizza!".format(num_pizzas))
 
-# Write a shipping.py Python program that asks the user for the weight of their package and then tells them which method of shipping is cheapest and how much it will cost to ship their package using Sal’s Shippers.
+pizza_and_prices = [[2, "pepperoni"], [6, "pineapple"], [1, "cheese"], [3, "sausage"], [2, "olives"], [7, "anchovies"], [2, "mushrooms"]]
+print(pizza_and_prices)
 
-weight = 24
-# Ground Shipping
-if weight <= 2:
-    cost_ground = weight * 1.5 + 20
-elif weight <= 6:
-    cost_ground = weight * 3.00 + 20
-elif weight <= 10:
-    cost_ground = weight * 4.00 + 20
-else:
-    cost_ground = weight * 4.75 + 20
+pizza_and_prices.sort()
+print(pizza_and_prices)
 
-print("Ground Shipping $" + str(cost_ground))
+cheapest_pizza = pizza_and_prices[0]
+print(cheapest_pizza)
 
-# Ground Shipping Premium
-cost_ground_premium = 125.00
+priciest_pizza = pizza_and_prices[-1]
+print(priciest_pizza)
 
-print("Ground Shipping Premium $" + str(cost_ground_premium))
+pizza_and_prices.pop()
+print(pizza_and_prices)
 
-# Drone Shipping
-if weight <= 2:
-    cost_drone = weight * 4.5
-elif weight <= 6:
-    cost_drone = weight * 9.00
-elif weight <= 10:
-    cost_drone = weight * 12.00
-else:
-    cost_drone = weight * 14.25
+pizza_and_prices.insert(4, [2.5, "peppers"])
+print(pizza_and_prices)
 
-print("Drone Shipping: $" + str(cost_drone))                    
+three_cheapest = pizza_and_prices[:3]
+print(three_cheapest)
+
+print("-----------------------------------------------------")
+print("-----------------------------------------------------")
+
+# Activities & Practices
+
+# 01
+# Which of the following lines of code would slice the list ["b", "c"] from mylist:
+mylist = ["a", "b", "c", "d", "e"]
+print(mylist[1:3])
+
+# 02
+# Which of the following code selects the last three elements of mylist?
+print(mylist[-3:])
+
+# 03
+# Which of the following commands will return the length of the list mylist?
+print(len(mylist))
+
+# # 04
+# # Which of the following lines of code will insert "Gus" as the middle element of the list friends?
+friends = ["Annabelle", "Greg", "Katya", "Sol"]
+#friends.insert(1, "Gus")  # turn on/off
+friends.insert(-2, "Gus")  # turn on/off
+print(friends)
+
+# 05
+# Which of the following would be generated by the code snippet?
+mylist = ["a", "b", "c", "d", "e", "f"]
+print(mylist[2:5])
+
+# 06
+# Which of the following would create a range object that starts at 3 and goes up to 15 (non-inclusive) in increments of 4?
+print(range(3, 15, 4))
+
+# 07
+# Fill in the code that would allow us to remove the 5th element from the following list:
+pizza_toppings = ["Cheese", "Pepperoni", "Garlic", "Pineapple", "Mushroom", "Prosciutto"]
+pizza_toppings.pop(4)
+print(pizza_toppings)
+
+print("-----------------------------------------------------")
+print("-----------------------------------------------------")
+
+# Tuples
+# What are Tuples?
+# Tuples is a Data Structure that's allow us to store more pices of data inside of it, and might be thinking that sounds alike list, and tuples actually lot similar to lists except that tuples are immutable which means values you created can't be change.
+# for example
+my_info = ("Mohammad", 33, "Web Developer")
+# output: ("Mohammad", 33, "Web Developer")
+my_info[0] # "Mohammad"
+my_info[1] # 33
+my_info[-1] # "Web Developer"
+#my_info[0] = "Khaled" # TypeError: 'tuple' object does not support item assignment
+
+# unpacking a tuple
+name, age, occupation = my_info
+name # output: "Mohammad"
+age # output: 33
+occupation # output: "Web Developer"
+# so as long I have variables on the left equals to number of element on tuple
+# all elements stored on each of these variables respectively and that can be really useful
+
+# one element tuple
+# speacial case when we want to creat one element
+one_element_tuple = (4, ) # not (4)
+
 
